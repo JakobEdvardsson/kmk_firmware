@@ -62,8 +62,8 @@ keyboard.modules = [layers, split, holdtap, combos, mousekeys, tapdance]
 keyboard.extensions.append(mediaKeys)
 
 # Todo: Import either keymap_sw (for Swedish Colemak-DH) or keymap_us (for English qwerty)
-import keymap_us as keymap  # noqa: E402
-# import keymap_sw as keymap  # noqa: E402
+# import keymap_us as keymap  # noqa: E402
+import keymap_sw as keymap  # noqa: E402
 
 # Combo layer
 layers.combo_layers = keymap.COMBO_LAYER

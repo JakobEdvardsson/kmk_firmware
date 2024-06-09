@@ -10,6 +10,8 @@ A_META = KC.HT(KC.A, KC.LWIN, prefer_hold=False, tap_time=300)
 
 D_WM = KC.HT(KC.D, KC.MO(5), prefer_hold=False, tap_time=300)
 SPACE_MOD = KC.HT(KC.SPACE, KC.MO(2), prefer_hold=False, tap_time=300)
+Z_SWE = KC.HT(KC.Z, KC.MO(7), prefer_hold=False, tap_time=300)
+
 
 
 # Right side
@@ -162,37 +164,31 @@ KEYMAP = [
 
         KC.Q, KC.W, KC.F, KC.P, KC.B,               KC.J, KC.L, KC.U, KC.Y, HOLD_QUOTE, \
         A_META, R_ALT, S_CTRL, T_SHIFT, KC.G,       KC.M, N_SHIFT, E_CTRL, I_ALT, O_META, \
-        KC.Z, KC.X, KC.C, D_WM, KC.V,              KC.K, KC.H, COMMA, DOT, DASH, \
+        Z_SWE, KC.X, KC.C, D_WM, KC.V,              KC.K, KC.H, COMMA, DOT, DASH, \
         SPACE_MOD, SYMBOL,                           NUM, KC.RSFT,
     ],
     [  # Symbol 1
-        #     ! @ # {/} ?    + - = * Å
-        #     $ % & (/) /    ~ ' " Ö Ä
-        #     | < > [/] \    ` ´ £ € ^
-        #         spc SYM    MOD SFT
-        KC.EXLM, AT, KC.HASH, CIRLYBRACKET, QUESTION,                   PLUS, MINUS, EQUAL, MULTIPLY, SWE_Å, \
-        DOLLAR, PERCENT, AND, PARENT, SLASH,                            TILDE, QUOTE, DUB_QUOTE, SWE_Ö, SWE_Ä, \
-        PIPE, LESS_THAN, GREATER_THAN, SQUERE_BRACKET, BACKSLASH,       L_QUOTE, R_QUOTE, POUND, EURO, HAT, \
-        KC.SPACE, SYMBOL,                                               NUM, KC.RSFT,
+
+        KC.EXLM, AT, KC.HASH, AND, QUESTION,                  PLUS, MULTIPLY, TILDE, L_QUOTE, HOLD_QUOTE, \
+        DOLLAR, PERCENT, L_PARENT, R_PARENT, SLASH,           EQUAL, L_CIRLYBRACKET, R_CIRLYBRACKET, R_QUOTE, POUND, \
+        BACKSLASH, PIPE, LESS_THAN, GREATER_THAN, XXXX,       MINUS, L_SQUERE_BRACKET, R_SQUERE_BRACKET, HAT, EURO , \
+        SPACE_MOD, SYMBOL,                                               NUM, KC.RSFT,
     ],
     [  # MOD 2
-        # BRI+ BRI- VOL- VOL+ MUTE      HOME  PG_DN  PG_UP   END      BSP
-        # META ALT  CTRL SHIFT INSERT              X     ←      ↓       ↑        →
-        # ESC PLAY/PAUSE Mshift PSCR PSCR        X     ENT    CTRL(+) CTRL(-)  CTRL(0)
-        #                   spc SYM    MOD SFT
-        KC.BRIGHTNESS_DOWN, KC.BRIGHTNESS_UP, KC.AUDIO_VOL_DOWN, KC.AUDIO_VOL_UP, KC.AUDIO_MUTE,     KC.HOME, KC.PGDOWN, KC.PGUP, KC.END, KC.BSPACE, \
-        KC.LGUI, KC.LALT, KC.LCTRL, KC.LSHIFT,KC.INSERT,                                               XXXX, KC.LEFT, KC.DOWN, KC.UP, KC.RIGHT, \
-        KC.ESC, KC.MEDIA_PLAY_PAUSE, KC.MEDIA_PREV_TRACK, KC.MEDIA_NEXT_TRACK, KC.PSCREEN,                              XXXX, KC.ENT, ZOOM_IN, ZOOM_OUT, ZOOM_RESET, \
-        KC.SPACE, SYMBOL,                                                                                  NUM, KC.RSFT,
+
+        KC.AUDIO_VOL_DOWN, KC.AUDIO_VOL_UP, KC.AUDIO_MUTE, KC.BRIGHTNESS_DOWN, KC.BRIGHTNESS_UP,    XXXX, XXXX, KC.HOME, KC.END, XXXX, \
+        KC.LGUI, KC.LALT, KC.LCTRL, KC.LSHIFT,KC.INSERT,                                               KC.PGUP, KC.LEFT, KC.DOWN, KC.UP, KC.RIGHT, \
+        KC.MEDIA_PREV_TRACK, KC.MEDIA_NEXT_TRACK, KC.MEDIA_PLAY_PAUSE, KC.LCTR, KC.PSCREEN,              KC.PGDOWN, KC.ENT, ZOOM_IN, ZOOM_OUT, ZOOM_RESET, \
+        SPACE_MOD, SYMBOL,                                                                                  NUM, KC.RSFT,
     ],
     [  # NUM 3
         # X     X    X   X     X   * 7 8 9 BSP
         # META ALT  CTRL SHIFT X   / 4 5 6 X
         # X     X    X   X     X   - 1 2 3 X
         #                X     X   + 0
-        XXXX, XXXX, XXXX, XXXX, XXXX,                       MULTIPLY, KC.N7, KC.N8, KC.N9, KC.BSPACE, \
-        KC.LGUI, KC.LALT, KC.LCTRL, KC.LSHIFT, XXXX,        SLASH, KC.N4, KC.N5, KC.N6, XXXX, \
-        XXXX, XXXX, XXXX, XXXX, XXXX,                       MINUS, KC.N1, KC.N2, KC.N3, XXXX, \
+        XXXX, XXXX, XXXX, XXXX, XXXX,                       MULTIPLY, KC.N7, KC.N8, KC.N9, KC.BSPACE,
+        KC.LGUI, KC.LALT, KC.LCTRL, KC.LSHIFT, XXXX,        SLASH, KC.N4, KC.N5, KC.N6, XXXX,
+        XXXX, XXXX, XXXX, XXXX, XXXX,                       MINUS, KC.N1, KC.N2, KC.N3, XXXX,
         XXXX, XXXX,                                         PLUS, KC.N0,
     ],
     [  # F NUM 4
@@ -220,5 +216,11 @@ KEYMAP = [
         XXXX, MOUSE_LEFT, MOUSE_DOWN, MOUSE_RIGHT, XXXX,         SCROLL_DOWN, LEFT_CLICK, RIGHT_CLICK,XXXX, XXXX, \
         XXXX, XXXX, XXXX, XXXX, XXXX,                            XXXX, XXXX, XXXX, XXXX, XXXX,\
         XXXX, KC.TO(0),                                          XXXX, XXXX,
+    ],
+    [  # åäö 7
+        XXXX, XXXX, XXXX, XXXX, XXXX,               XXXX, XXXX, XXXX, XXXX, SWE_Å, \
+        XXXX, XXXX, XXXX, XXXX, XXXX,               XXXX, XXXX, XXXX, SWE_Ö, SWE_Ä, \
+        XXXX, XXXX, XXXX, XXXX, XXXX,               XXXX, XXXX, XXXX, XXXX, XXXX, \
+        XXXX,XXXX,                                          XXXX, XXXX,
     ],
 ]
